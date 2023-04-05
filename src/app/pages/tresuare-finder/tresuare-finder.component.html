@@ -1,0 +1,27 @@
+
+<div class="contenedor">
+ 
+    <div class="contenedor__formulario">
+        <label for="filas">Número de filas:</label>
+        <input type="number" id="filas" [(ngModel)]="filas">
+        
+        <label for="columnas">Número de columnas:</label>
+        <input type="number" id="columnas" [(ngModel)]="columnas">
+        
+        <button (click)="pintarTabla($event)">Crear tablas</button>
+    </div>
+    
+    <div class="contenedor__tabla">
+        <h3 class="contenedor__texto">Número de intentos: {{intentosCount}}</h3>
+        <div *ngIf="tabla">
+            <table>
+                <tr *ngFor="let fila of filasArray; let i = index">
+                    <td *ngFor="let columna of columnasArray; let j = index">
+                        <div><img [src]="imagenSrc[i][j]" (click)="voltearImagen(i, j); numeroIntentos()"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <button (click)="reset()">Volver a empezar</button>
+    </div>
+</div>
