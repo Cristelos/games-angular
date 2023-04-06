@@ -5,41 +5,36 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './hit.component.html',
   styleUrls: ['./hit.component.scss']
 })
-export class HitComponent implements OnInit{
+export class HitComponent implements OnInit {
+  score: number = 0;
+  tiempo: number = 0;
+  squares: any[] = [];
 
-  score: number;
-  tiempo: number;
-  squares: any[];
-  squareClasses: any;
-  // bgImage = "assets/exercise-2/bg.jpg";
-  // moleImage = "assets/exercise-2/mole.png";
-
-  constructor(){
-    this.score = 0;
-    this.tiempo = 0;
-    this.squares = [];
-    this.squareClasses = {
-      'b-square': true,
-      'b-mole': false
-    };
-  }
+  constructor() {}
 
   ngOnInit(): void {
-   this.crearTabla();
- }
-
- crearTabla(){
-  for (let i = 0; i<9 ; i++) {
-    this.squares.push({ isMole: false })
+    this.crearTabla();
   }
- }
 
- moverTopo(){
-  const index = Math.floor(Math.random() * 9);
-  this.squares.forEach((square, i) => {
-    square.isMole = (i === index);
-  })
-}
+  crearTabla() {
+    for (let i = 0; i < 9; i++) {
+      this.squares.push({ isMole: false })
+    }
+    // const topo = Math.floor(Math.random()* this.squares.length);
+    // this.squares[topo].isMole = true;
+  }
+  
+
+  moverTopo() {
+    setInterval(() => {
+      const index = Math.floor(Math.random() * 9);
+      this.squares.forEach((square, i) => {
+        square.isMole = (i === index);
+      })
+    }, 1000);
+  }
+  
+  
 
 
 }

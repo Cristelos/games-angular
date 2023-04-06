@@ -8,13 +8,7 @@
     border-radius: 3px;
     font-size: 1.5rem;
 }
-.b-square {
-    width: 200px;
-    height: 200px;
-    border: 3px solid #000000;
-    background: "assets/exercise-2/bg.jpg";
-  }
-  
+
   .b-grid {
     display: flex;
     flex-flow: row wrap;
@@ -25,9 +19,15 @@
   }
   
   .b-mole {
-    background: "assets/exercise-2/mole.png";
-    background-size: 90%;
-    background-repeat: no-repeat;
-    background-position: center;
+    width: 90%;
+  }
+
+  .b-mole-bg.hidden {
+    display: none;
   }
   
+  .b-mole-bg{
+    width: 200px;
+    height: 200px;
+    border: 3px solid #000000;
+  }

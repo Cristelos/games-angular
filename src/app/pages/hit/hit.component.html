@@ -1,14 +1,15 @@
 <div class="contenedor">
     <h1>Whack a mole!</h1>
-
-<h2>Your score:</h2>
-<!-- <h2>{{score}}</h2> -->
-
-<h2>Seconds left:</h2>
-<!-- <h2>{{timeLeft}}</h2> -->
-
-<div class="b-grid">
-    <div *ngFor="let square of squares" [ngClass]="{ 'b-square': true, 'b-mole': square.isMole }"></div>
-</div>
-
-</div>
+  
+    <h2>Your score: {{ score }}</h2>
+  
+    <h2>Seconds left: {{ tiempo }}</h2>
+  
+    <div class="b-grid">
+        <div *ngFor="let square of squares" class="b-square" [ngClass]="{ 'b-mole': square.isMole }">
+            <img src="assets/exercise-2/bg.jpg" class="b-mole-bg" [ngClass]="{ 'hidden': square.isMole === true }">
+            <img src="assets/exercise-2/mole.png" class="b-mole" *ngIf="square.isMole">
+          </div>          
+    </div>
+  </div>
+  
