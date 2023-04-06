@@ -1,8 +1,14 @@
 .header{
     display: flex;
-    justify-content: center;
     background-color: #fafafa;
+    flex-direction: row;
+    align-items: center;
+    padding: 3%;
+    justify-content: space-between;
 
+    &__logo{
+        width: 150px;
+    }
     &__nav{
         display: flex;
         flex-wrap: wrap;
@@ -10,5 +16,19 @@
         gap: 40px;
         height: 50px;
         align-items: center;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+    &__enlaces{
+        color: #525252;
+    }
+    &__enlaces:hover{
+        color: #00c6e7;
+    }
+}
+@media screen and (min-width: 0) and (max-width: 863px){
+    .header__nav{
+        display: block;
+        padding: 5px;
     }
 }

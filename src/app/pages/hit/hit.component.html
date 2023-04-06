@@ -1,1 +1,14 @@
-<p>hit works!</p>
+<div class="contenedor">
+    <h1>Whack a mole!</h1>
+
+<h2>Your score:</h2>
+<!-- <h2>{{score}}</h2> -->
+
+<h2>Seconds left:</h2>
+<!-- <h2>{{timeLeft}}</h2> -->
+
+<div class="b-grid">
+    <div *ngFor="let square of squares" [ngClass]="{ 'b-square': true, 'b-mole': square.isMole }"></div>
+</div>
+
+</div>

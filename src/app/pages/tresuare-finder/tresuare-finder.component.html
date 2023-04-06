@@ -8,7 +8,7 @@
         <label for="columnas">Número de columnas:</label>
         <input type="number" id="columnas" [(ngModel)]="columnas">
         
-        <button (click)="pintarTabla($event)">Crear tablas</button>
+        <button (click)="pintarTabla($event)" class="contenedor__boton">START</button>
     </div>
     
     <div class="contenedor__tabla">
@@ -22,6 +22,6 @@
                 </tr>
             </table>
         </div>
-        <button (click)="reset()">Volver a empezar</button>
+        <button (click)="reset()" class="contenedor__boton">Volver a empezar</button>
     </div>
 </div>
