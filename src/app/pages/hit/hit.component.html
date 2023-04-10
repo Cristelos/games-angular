@@ -1,15 +1,20 @@
 <div class="contenedor">
-    <h1>Whack a mole!</h1>
+  <h2>Whack a mole!</h2>
+<div class="contenedor__empiece">
   
-    <h2>Your score: {{ score }}</h2>
+  <h3>Your score: {{ score }}</h3>
+
+  <h3>Seconds left: {{ tiempo }}</h3>
   
-    <h2>Seconds left: {{ tiempo }}</h2>
-  
-    <div class="b-grid">
-        <div *ngFor="let square of squares" class="b-square" [ngClass]="{ 'b-mole': square.isMole }">
-            <img src="assets/exercise-2/bg.jpg" class="b-mole-bg" [ngClass]="{ 'hidden': square.isMole === true }">
-            <img src="assets/exercise-2/mole.png" class="b-mole" *ngIf="square.isMole">
-          </div>          
+</div>
+<button (click)="start()" class="contenedor__boton">Start</button>
+    <div class="contenedor__juego">
+      <div *ngFor="let fila of filas; let i = index" class="fila">
+        <div *ngFor="let columna of columnas; let j = index" class="columna" (click)="puntuar(i,j)">
+            <img src="{{topoImg}}" *ngIf="topo" >
+            <img [src]="imgSrc[i][j]">
+        </div>          
+      </div>
     </div>
-  </div>
-  
+
+</div>

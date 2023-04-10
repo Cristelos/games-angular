@@ -1,11 +1,14 @@
 .header{
     display: flex;
     background-color: #fafafa;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    padding: 3%;
     justify-content: space-between;
-
+    &__h1{
+        font-size: 8rem;
+        font-weight: 300;
+        color: #525252;
+    }
     &__logo{
         width: 150px;
     }
